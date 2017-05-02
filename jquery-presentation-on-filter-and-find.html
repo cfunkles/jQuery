@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script>
+		$( document ).ready(function() {
+			//jQuery.com
+ 			$( "li.item-ii" ).find( "ul li" ).css( "background-color", "red" );
+ 			$( "ol li" ).filter( ":even" ).css( "background-color", "aqua" );
+ 			$( "header" ).find( "h1" ).css( "color", "blue");
+		});
+	</script>
+</head>
+<body>
+	<header>
+	<!--intro for presentation-->
+		<h1>jQuery .find() and .filter() Methods</h1>
+		<p>.find() and .filter are traversing methods. These methods move through elements in relationship to other elements. They can find decendents of an element selected.</p>
+	</header>
+	<div class="findMethod">
+	<h2>Example of the .find() method.</h2>
+	<p>It turns only the decendants of the class selector item-ii red, the the element that is selected itself. The code here looks like this: <br><code>$( "li.item-ii" ).find( "li" ).css( "background-color", "red" );</code> <br></p>
+		<ul class="level-1">
+		  <li class="item-i">I</li>
+		  <li class="item-ii">II
+		    <ul class="level-2"><!--here down will be red -->
+		      <li class="item-a">A</li>
+		      <li class="item-b">B
+		        <ul class="level-3">
+		          <li class="item-1">1</li>
+		          <li class="item-2">2</li>
+		          <li class="item-3">3</li>
+		        </ul>
+		      </li>
+		      <li class="item-c">C</li>
+		    </ul><!--end of red -->
+		  </li>
+		  <li class="item-iii">III</li>
+		</ul>
+	</div>
+	<!--code borowed from jQuery.com-->
+	<div class="filterMethod">
+		<h2>Example of the .filter() method.</h2>
+		<p>The .filter() method returns elements you specifed and not the ones you didn't specifically mention. The examples I seen like to use even and odd a lot. Here is what the code looks like: <br><code>$( "ol li" ).filter( ":even" ).css( "background-color", "aqua" );</code></p>
+		<ol>
+			<li>This is list item One, it is actually even because of the whole 0 based indexing thing</li>
+			<li>This is list item Two, it is actually odd because of the whole 0 based indexing thing</li>
+			<li>This is list item Three, it is actually even because of the whole 0 based indexing thing</li>
+			<li>This is list item Four, it is actually odd because of the whole 0 based indexing thing</li>
+			<li>This is list item Five, it is actually even because of the whole 0 based indexing thing</li>
+		</ol>
+	</div>
+
+
+</body>
+</html>
